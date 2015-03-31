@@ -102,9 +102,9 @@
 @line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-base:        5px;
+@border-radius-large:       7px;
+@border-radius-small:       4px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -124,7 +124,7 @@
 //** Padding for `<th>`s and `<td>`s.
 @table-cell-padding:            8px;
 //** Padding for cells in `.table-condensed`.
-@table-condensed-cell-padding:  5px;
+@table-condensed-cell-padding:  5px; 
 
 //** Default background color used for all tables.
 @table-bg:                      transparent;
@@ -175,16 +175,17 @@
 //== Forms
 //
 //##
-
+@include: linear-gradient(to top, #fdfdfd 0%, #f9f9f9 100%);
 //** `<input>` background color
-@input-bg:                       #fff;
+@input-bg:                       @include;
 //** `<input disabled>` background color
-@input-bg-disabled:              @gray-lighter;
+@input-bg-disabled:              @include;
+@input-box-shadow:               inset 0 1px 2px rgba(0,0,0,.08);
 
 //** Text color for `<input>`s
-@input-color:                    @gray;
+@input-color:                    #293041;
 //** `<input>` border color
-@input-border:                   #ccc;
+@input-border:                   #e1e1e1;
 
 // TODO: Rename `@input-border-radius` to `@input-border-radius-base` in v4
 //** Default `.form-control` border radius
@@ -196,10 +197,10 @@
 @input-border-radius-small:      @border-radius-small;
 
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             #478cfe;
 
 //** Placeholder text color
-@input-color-placeholder:        #999;
+@input-color-placeholder:        #a6bedc;
 
 //** Default `.form-control` height
 @input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
@@ -213,6 +214,8 @@
 
 @legend-color:                   @gray-dark;
 @legend-border-color:            #e5e5e5;
+
+@label-input-color:              #859bbb;
 
 //** Background color for textual input addons
 @input-group-addon-bg:           @gray-lighter;
