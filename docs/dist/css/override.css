@@ -490,6 +490,7 @@ table.dataTable thead .sorting_desc:after {
   position: relative;
   background: rgba(0, 0, 0, 0.8);
   z-index: 100;
+  height: 300px;
 }
 .carousel-generic .fa-times,
 .carousel-generic .fa-external-link {
@@ -513,6 +514,7 @@ table.dataTable thead .sorting_desc:after {
   right: 90px;
 }
 .carousel-generic.carousel-active {
+  height: auto;
   position: fixed;
   top: 0;
   left: 0;
