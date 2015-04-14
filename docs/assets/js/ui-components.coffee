@@ -41,4 +41,7 @@ if $('.res-layout').length
 $('.section-datepicker').find('#datepicker').datepicker
   orientation: "auto"
 $('.section-sortable').find('.sortable').sortable()
+$('.select2-navigation').select2
+  containerCssClass: 'select2-navigation',
+  minimumResultsForSearch: -1
 
