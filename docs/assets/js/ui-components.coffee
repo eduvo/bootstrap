@@ -45,6 +45,14 @@ $('.select2-navigation').select2
   containerCssClass: 'select2-navigation',
   minimumResultsForSearch: -1
 
+$('.section-select').find('select.select2-fusion').select2
+  containerCssClass: 'select2-fusion'
+  dropdownCssClass: 'select2-fusion'
+
+$('.section-select').find('select.select2-dropdown').select2
+  containerCssClass: 'select2-dropdown'
+  dropdownCssClass: 'select2-dropdown'
+
 $('.section-lightbox')
   .on 'click', '.btn-lightbox', (e)->
     $('.section-lightbox').find('.carousel-generic').toggleClass('carousel-active', true)
