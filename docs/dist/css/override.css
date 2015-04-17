@@ -561,6 +561,9 @@ table.dataTable thead .sorting_desc:after {
   content: "\e113";
   color: #478cfe;
 }
+.table-wrapper {
+  overflow-x: auto;
+}
 .input-group .input-group-addon {
   color: #6f96c6;
   background: linear-gradient(to bottom, #fdfdfd 0%, #f9f9f9 100%);
