@@ -64,7 +64,7 @@ $('.section-select').find('select.select2-simple').select2
 $('.section-lightbox')
   .on 'click', '.btn-lightbox', (e)->
     $('.section-lightbox').find('.carousel-generic').toggleClass('carousel-active', true)
-  .on 'click', '.carousel-generic', (e)->
+  .on 'click touchstart', '.carousel-generic', (e)->
     $el = $(e.target)
     unless $el.parents('.carousel-generic').length
       $('.section-lightbox').find('.carousel-generic').toggleClass('carousel-active', false)
