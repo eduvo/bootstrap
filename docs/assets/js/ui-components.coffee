@@ -71,10 +71,6 @@ $('.section-lightbox')
 
 
 
-
-
-
-
 class SelectSwitcher
   constructor: ($dom)->
     @$dom = $dom
@@ -123,3 +119,12 @@ class SelectSwitcher
       @refreshState()
 
 new SelectSwitcher($('.section-select').find('.select-switcher'))
+
+
+# For settings layout
+$('#settings-layout').on 'click', '.header-menu', (e)->
+  $el = $(e.currentTarget)
+  $el.toggleClass('open')
+  $target = $($el.data('target'))
+  is_open = $el.hasClass('open')
+  $target.toggle(is_open)
