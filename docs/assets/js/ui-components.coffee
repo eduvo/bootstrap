@@ -123,7 +123,7 @@ new SelectSwitcher($('.section-select').find('.select-switcher'))
 
 
 # For settings layout
-$('#settings-layout').on 'click', '.header-menu', (e)->
+$('#settings-layout').on 'click touchend', '.header-menu', (e)->
   $el = $(e.currentTarget)
   $el.toggleClass('open')
   $target = $($el.data('target'))
