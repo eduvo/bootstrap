@@ -1,16 +1,13 @@
 ---
 ---
 
-if $('#datatable').length
-  $('#datatable').DataTable
-    paging: false
-    searching: false
-    info: false
+####################################
+#### For Responsive Layout / Settings Layout pages
+####################################
 
 class ResponsiveLayout
   constructor: (@$dom)->
     do @eventBinding
-
 
   toggleActive: ($element)->
     active_type = $element.data('layout-switch')
@@ -35,14 +32,35 @@ class ResponsiveLayout
         else if !in_navigation
           @$dom.attr('data-active', '')
 
+    if @$dom.is('#settings-layout')
+      @$dom.on 'click touchend', '.header-menu', (e)->
+        $el = $(e.currentTarget)
+        $el.toggleClass('open')
+        $target = $($el.data('target'))
+        is_open = $el.hasClass('open')
+        $target.toggle(is_open)
+
 if $('.res-layout').length
   new ResponsiveLayout($('.res-layout'))
+
+
+
+####################################
+#### For Components page
+####################################
+
+if $('#datatable').length
+  $('#datatable').DataTable
+    paging: false
+    searching: false
+    info: false
 
 $('.section-datepicker').find('#datepicker').datepicker
   orientation: "auto"
 $('.section-sortable').find('.sortable').sortable()
 $('.select2-navigation').select2
-  containerCssClass: 'select2-navigation',
+  containerCssClass: 'select2-navigation'
+  dropdownCssClass: 'select2-navigation'
   minimumResultsForSearch: -1
 
 $('.section-select').find('select.select2-fusion').select2
@@ -68,12 +86,6 @@ $('.section-lightbox')
     $el = $(e.target)
     unless $el.parents('.carousel-generic').length
       $('.section-lightbox').find('.carousel-generic').toggleClass('carousel-active', false)
-
-
-
-
-
-
 
 class SelectSwitcher
   constructor: ($dom)->
@@ -123,3 +135,4 @@ class SelectSwitcher
       @refreshState()
 
 new SelectSwitcher($('.section-select').find('.select-switcher'))
+

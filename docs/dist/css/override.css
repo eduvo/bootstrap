@@ -69,7 +69,7 @@ a:hover {
 }
 #activity-list .activity-wrapper .activity-info .activity-time {
   float: right;
-  color: #b0c6e7;
+  color: #859bbb;
   font-size: 11px;
   margin-top: 3px;
 }
@@ -121,7 +121,7 @@ a:hover {
 }
 #activity-list .activity-wrapper .activity .activity-content-wrapper .activity-description {
   font-size: 11px;
-  color: #b0c6e7;
+  color: #859bbb;
   margin-top: 3px;
 }
 #activity-list .activity-wrapper .avatar {
@@ -280,6 +280,9 @@ fieldset[disabled] .btn-primary.active {
   padding-top: 5px;
   padding-bottom: 5px;
   border-top: 1px solid #d9e7f7;
+}
+.bar .btn {
+  margin: 0;
 }
 .panel-group .panel {
   border: none;
@@ -1517,6 +1520,117 @@ div.FixedHeader_Cloned table {
 .nav.nav-main li.active > a .badge {
   color: #ecf0f1;
   background: #e84c3d;
+}
+.nav.nav-main li:last-child {
+  margin-bottom: 2em;
+}
+.nav.nav-settings {
+  background-color: #fff;
+}
+.nav.nav-settings .bar.bar-default {
+  border-top: none;
+}
+.nav.nav-settings .settings-item {
+  width: 100%;
+  min-height: 80px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid #d9e7f7;
+  padding-bottom: 5px;
+}
+.nav.nav-settings .settings-item:last-child {
+  border-bottom: none;
+}
+.nav.nav-settings .settings-item:hover {
+  background: #5c6c85;
+}
+.nav.nav-settings .settings-item:hover .icon-angle-right {
+  color: #fff;
+}
+.nav.nav-settings .settings-item:hover .settings-content .settings-title {
+  color: #fff;
+}
+.nav.nav-settings .settings-item:hover .settings-content .settings-description {
+  color: rgba(255, 255, 255, 0.7);
+}
+.nav.nav-settings .settings-item .logo {
+  width: 60px;
+  margin: 0 10px 0 20px;
+  padding-top: 10px;
+}
+.nav.nav-settings .settings-item .logo > img {
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.nav.nav-settings .settings-item .settings-content {
+  padding: 0 35px 0 10px;
+  overflow: hidden;
+}
+.nav.nav-settings .settings-item .settings-content .settings-title {
+  margin-top: 18px;
+  color: #293041;
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 20px;
+}
+.nav.nav-settings .settings-item .settings-content .settings-description {
+  margin-top: 5px;
+  color: #859bbb;
+  font-size: 12px;
+  font-weight: 400;
+  padding-right: 20px;
+}
+.nav.nav-settings .settings-item .icon-angle-right {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  color: #a6bedc;
+  font-size: 24px;
+}
+.nav.nav-settings .settings-school-settings:hover {
+  background-color: #336dcd;
+}
+.nav.nav-settings .settings-school-directory:hover {
+  background-color: #f3c600;
+}
+.nav.nav-settings .settings-access-permission:hover {
+  background-color: #e87e04;
+}
+.nav.nav-settings .settings-academic-terms:hover {
+  background-color: #227fbb;
+}
+.nav.nav-settings .settings-academic-programmes:hover {
+  background-color: #9c55b8;
+}
+.nav.nav-settings .settings-attendance:hover {
+  background-color: #e94b35;
+}
+.nav.nav-settings .settings-import-export:hover {
+  background-color: #00a085;
+}
+.nav.nav-settings .settings-billing:hover {
+  background-color: #1ecd6e;
+}
+.nav.nav-settings .settings-finalsite .logo,
+.nav.nav-settings .settings-isams .logo {
+  margin: 0 5px 0 25px;
+}
+.nav.nav-settings .settings-finalsite .logo > img,
+.nav.nav-settings .settings-isams .logo > img {
+  width: 50px;
+  top: 12px;
+  border: none;
+  border-radius: 0;
+}
+.nav.nav-settings .settings-isams .logo {
+  padding-top: 15px;
+  margin: 0 -4px 0 34px;
+}
+.nav.nav-settings .settings-isams .logo > img {
+  width: 33px;
+  top: 15px;
 }
 .select2-container .select2-choice .select2-arrow b {
   background: none !important;

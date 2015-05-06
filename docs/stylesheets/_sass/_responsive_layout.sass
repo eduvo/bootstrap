@@ -37,12 +37,90 @@ html.responsive-html, html.responsive-html body
   background: #f0f6ff
   .res-header
     position: relative
-    height: $HEAD_HEIGHT
     // style for preview
     background: #fff
-    padding: 10px 20px
     font-size: 40px
     line-height: 1em
+    color: #293040
+    i.fa
+      color: #4b8ffa
+    > *
+      height: $HEAD_HEIGHT
+    .header-menu
+      padding: 0
+      line-height: $HEAD_HEIGHT
+      max-width: 120px
+      width: 120px
+      text-align: center
+      font-size: 0
+      position: relative
+      border-right: 1px solid #ecf3fa
+      cursor: pointer
+      &:hover
+        color: #61697C
+      > *
+        margin-right: 5px
+        font-size: 20px
+        &:last-child
+          margin: 0
+      &.open
+        &:before
+          display: block
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 50%
+          margin-left: -10px
+          border-left: 10px solid transparent
+          border-right: 10px solid transparent
+          border-bottom: 10px solid #293041
+    .header-name
+      line-height: $HEAD_HEIGHT
+      padding: 0 15px
+      white-space: nowrap
+      font-size: 20px
+      i.fa
+        height: 60px
+        line-height: 60px
+        margin-right: 5px
+      span
+        display: block
+        overflow: hidden
+        text-overflow: ellipsis
+    .header-actions
+      font-size: 0
+      padding-right: 10px
+      text-align: right
+      .dropdown-menu
+        display: inline-block
+        position: relative
+        top: auto
+        left: auto
+        float: none
+        margin: 0
+        border: none
+        box-shadow: none
+        li
+          display: inline-block
+          a
+            min-width: 0
+      >.fa
+        display: none
+      a
+        display: inline-block
+        font-size: 12px
+        color: #4b8ffa
+        margin: 0
+        padding: 10px 10px 0 10px
+        height: $HEAD_HEIGHT
+        &:hover
+          opacity: 0.7
+        i.fa
+          display: block
+          margin: 0 auto
+          font-size: 20px
+        span
+          white-space: nowrap
     &:before
       content: ''
       position: absolute
@@ -60,13 +138,23 @@ html.responsive-html, html.responsive-html body
   .res-navigation, .res-content
     // overflow-y: auto
   .res-navigation
+    position: relative
     height: 100%
     width: $NAV_WIDTH
     float: left
+    .account-switch
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 2
+      &+.nav-main
+        position: relative
+        z-index: 1
+        padding-bottom: 50px
     .res-navigation-content
       height: 100%
       // style for preview
-      padding: 20px
       color: #fff
       background: #293040
       overflow-y: auto
@@ -111,7 +199,48 @@ html.responsive-html, html.responsive-html body
   .res-layout
     .res-content-wrapper
       margin-left: 0
+    .res-header
+      .header-menu
+        display: none
+      .header-name
+        padding: 0
+      .header-actions
+        >.fa
+          display: inline-block
+          text-align: center
+          cursor: pointer
+          width: 60px
+          font-size: 24px
+          line-height: $HEAD_HEIGHT
+          height: $HEAD_HEIGHT
+        .dropdown-menu
+          display: none
+          right: -8px
+          box-shadow: 0 3px 12px rgba(#000, 0.2)
+          li
+            display: block
+            a
+              display: block
+              height: auto
+              padding: 8px 15px
+              text-align: left
+              i, span
+                display: inline-block
+                vertical-align: middle
+                font-size: 14px
+              i
+                width: 16px
+                text-align: center
+          >.fa
+            display: block
+        &.open
+          .dropdown-menu
+            display: block
+    &#settings-layout
+      .res-content
+        margin-right: 0
     .res-navigation
+      display: block!important
       position: absolute
       top: 0
       left: -$NAV_WIDTH
@@ -199,7 +328,7 @@ html.responsive-html, html.responsive-html body
           left: auto
           &:before
             content: "\e014"
-    &.res-two-columns
+    &.res-two-columns, &#settings-layout
       .res-header
         padding-right: 20px
 
@@ -213,6 +342,11 @@ html.responsive-html, html.responsive-html body
   background: #fff
   min-height: 200px
   padding: 20px
+  margin-bottom: 20px
+  box-shadow: 0 0 5px rgba(black, 0.1)
+
+.content-wrapper
+  background: #fff
   margin-bottom: 20px
   box-shadow: 0 0 5px rgba(black, 0.1)
 
