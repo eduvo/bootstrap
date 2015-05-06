@@ -70,3 +70,56 @@ $('.section-lightbox')
       $('.section-lightbox').find('.carousel-generic').toggleClass('carousel-active', false)
 
 
+
+
+
+
+
+class SelectSwitcher
+  constructor: ($dom)->
+    @$dom = $dom
+    @$select = @$dom.find('select')
+    @$prev = @$dom.find('.prev')
+    @$next = @$dom.find('.next')
+    @eventBinding()
+    @refreshState()
+
+  refreshState: ->
+    current_index = @getCurrentIndex()
+    options_length = @getAllValues().length
+    @$prev.removeClass('disabled')
+    @$next.removeClass('disabled')
+    if current_index is 0
+      @$prev.addClass('disabled')
+    else if (current_index + 1) is options_length
+      @$next.addClass('disabled')
+
+  getAllValues: ->
+    @$select.find('option').map ->
+      $option = $(@)
+      $option.val()
+
+  getCurrentIndex: ->
+    allValues = @getAllValues()
+    current_value = @$select.val()
+    $.inArray(current_value, allValues)
+
+  eventBinding: ->
+    @$select.on 'change', =>
+      @refreshState()
+
+    @$dom.on 'click', '[data-switch]:not(".disabled")', (e)=>
+      $el = $(e.currentTarget)
+      direction = $el.data 'switch'
+      new_index = 0
+      allValues = @getAllValues()
+      current_index = @getCurrentIndex()
+      if (direction is 'prev')
+        new_index = current_index - 1
+      else if (direction is 'next')
+        new_index = current_index + 1
+      new_index = 0 if new_index is -1
+      @$select.val(allValues[new_index]).trigger('change')
+      @refreshState()
+
+new SelectSwitcher($('.section-select').find('.select-switcher'))
