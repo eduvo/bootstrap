@@ -215,7 +215,7 @@ html.responsive-html, html.responsive-html body
           height: $HEAD_HEIGHT
         .dropdown-menu
           display: none
-          right: 30px
+          right: -8px
           box-shadow: 0 3px 12px rgba(#000, 0.2)
           li
             display: block
@@ -228,11 +228,17 @@ html.responsive-html, html.responsive-html body
                 display: inline-block
                 vertical-align: middle
                 font-size: 14px
+              i
+                width: 16px
+                text-align: center
           >.fa
             display: block
         &.open
           .dropdown-menu
             display: block
+    &#settings-layout
+      .res-content
+        margin-right: 0
     .res-navigation
       display: block!important
       position: absolute
