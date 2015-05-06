@@ -281,6 +281,9 @@ fieldset[disabled] .btn-primary.active {
   padding-bottom: 5px;
   border-top: 1px solid #d9e7f7;
 }
+.bar .btn {
+  margin: 0;
+}
 .panel-group .panel {
   border: none;
   border-radius: 0;
