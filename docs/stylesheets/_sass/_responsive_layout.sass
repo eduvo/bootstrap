@@ -1,3 +1,5 @@
+@import shared/variables
+
 #responsive-nav
   position: absolute
   bottom: calc( 100% - 5px)
@@ -34,14 +36,16 @@ html.responsive-html, html.responsive-html body
 .res-layout
   height: 100%
   // style for preview
-  background: #f0f6ff
+  background: $backgroundColor
   .res-header
     position: relative
     // style for preview
     background: #fff
     font-size: 40px
-    line-height: 1em
+    height: 60px
+    line-height: 60px
     color: #293040
+    +regular-box-shadow
     i.fa
       color: #4b8ffa
     > *
@@ -121,14 +125,14 @@ html.responsive-html, html.responsive-html body
           font-size: 20px
         span
           white-space: nowrap
-    &:before
-      content: ''
-      position: absolute
-      top: 100%
-      left: 0
-      right: 0
-      height: 3px
-      background: linear-gradient(rgba(#000, 0.1), rgba(#000, 0))
+    // &:before
+    //   content: ''
+    //   position: absolute
+    //   top: 100%
+    //   left: 0
+    //   right: 0
+    //   height: 3px
+    //   background: linear-gradient(rgba(#000, 0.1), rgba(#000, 0))
   .res-body
     height: calc( 100% - #{$HEAD_HEIGHT} )
     &:after
@@ -334,22 +338,16 @@ html.responsive-html, html.responsive-html body
       .res-header
         padding-right: 20px
 
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 991px)
-  .res-layout
-
-
 .test-content
   background: #fff
   min-height: 200px
   padding: 20px
   margin-bottom: 20px
-  box-shadow: 0 0 5px rgba(black, 0.1)
+  +regular-box-shadow
 
 .content-wrapper
   background: #fff
   margin-bottom: 20px
-  box-shadow: 0 0 5px rgba(black, 0.1)
+  +regular-box-shadow
 
 

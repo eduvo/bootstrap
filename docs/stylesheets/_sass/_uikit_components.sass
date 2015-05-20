@@ -1,5 +1,7 @@
+@import shared/variables
+
 #uikit-components
-  background: #f9f9f9
+  background: #f0f6ff
   .section
     float: left
     width: calc(50% - 24px)
@@ -7,15 +9,14 @@
     &.section-full
       width: calc(100% - 24px)
     .section-head
-      color: #C6CFD7
+      color: $supportingColor
       font-weight: bold
       text-shadow: 0 1px 0 rgba(255, 255, 255, 1)
       margin-bottom: 5px
     .section-body
       background: #fff
-      border-radius: 4px
       padding: 10px
-      border: 1px solid #F0F0F0
+      +regular-box-shadow
 
 .bs-docs-masthead, .bs-docs-header
   background: #293041
