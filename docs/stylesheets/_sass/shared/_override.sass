@@ -17,3 +17,92 @@
   &.collapsed
     .collapse-icon
       transform: rotate(90deg)
+
+.dataTables_wrapper table.dataTable thead
+  .sorting:after
+    content: ''
+    display: inline-block
+    padding: 0
+    margin-left: 5px
+    width: 10px
+    height: 10px
+    background: url('../assets/img/icons/arrow.svg') center center no-repeat!important
+    background-size: contain!important
+  .sorting_asc:after
+    content: ''
+    display: inline-block
+    padding: 0
+    margin-left: 5px
+    width: 10px
+    height: 10px
+    background: url('../assets/img/icons/arrow-active.svg') center center no-repeat!important
+    background-size: contain!important
+  .sorting_desc:after
+    content: ''
+    display: inline-block
+    padding: 0
+    margin-left: 5px
+    width: 10px
+    height: 10px
+    background: url('../assets/img/icons/arrow-top-active.svg') center center no-repeat!important
+    background-size: contain!important
+
+.select2-container.select2-dropdown a.select2-choice > .select2-arrow b:before
+  content: ''
+  width: 10px
+  height: 10px
+  background: url('../assets/img/icons/arrow.svg') center center no-repeat!important
+  background-size: contain!important
+  top: 50%
+  right: 50%
+  margin: -5px -5px 0 0
+
+.select2-container.select2-fusion a.select2-choice > .select2-arrow b
+  &:before, &:after
+    content: ''
+  &:before
+    width: 16px
+    height: 16px
+    background: url('../assets/img/icons/toggler.svg') center center no-repeat!important
+    background-size: contain!important
+    &:before
+      display: none
+
+.select-switcher
+  [data-switch] i
+    content: ''
+    display: inline-block
+    padding: 0
+    margin-left: 5px
+    width: 10px
+    height: 10px
+    &:before
+      content: ''
+  [data-switch='prev'] i
+    background: url('../assets/img/icons/arrow-left.svg') center center no-repeat!important
+    background-size: contain!important
+  [data-switch='next'] i
+    background: url('../assets/img/icons/arrow-right.svg') center center no-repeat!important
+    background-size: contain!important
+
+.nav.nav-settings .settings-item .icon-angle-right
+  display: inline-block
+  padding: 0
+  margin-left: 5px
+  width: 10px
+  height: 10px
+  background: url('../assets/img/icons/arrow-right.svg') center center no-repeat!important
+  background-size: contain!important
+  top: 50%
+  margin-top: -5px
+  &:before
+    content: ''
+
+.breadcrumb > li + li:before
+  content: ''
+  display: inline-block
+  width: 10px
+  height: 10px
+  background: url('../assets/img/icons/arrow-right.svg') center center no-repeat!important
+  background-size: contain!important
+
