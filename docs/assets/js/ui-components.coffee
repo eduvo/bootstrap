@@ -136,3 +136,20 @@ class SelectSwitcher
 
 new SelectSwitcher($('.section-select').find('.select-switcher'))
 
+
+
+####################################
+#### Settings navigation
+####################################
+$('#settings-navigation').on 'click', 'a', (e)->
+  $('#settings-navigation').find('li').removeClass('active')
+  $('#settings-navigation').find('li i').removeClass('active')
+  $el = $(e.currentTarget)
+  $el.closest('li').addClass('active')
+  $el.find('i').addClass('active')
+
+
+
+
+
+
