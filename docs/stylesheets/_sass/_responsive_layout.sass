@@ -37,6 +37,14 @@ html.responsive-html, html.responsive-html body
   height: 100%
   // style for preview
   background: $backgroundColor
+  &#settings-layout
+    .res-content-wrapper
+      margin-left: 0
+      padding-left: $NAV_WIDTH + 20px
+    &.navigation-open
+      .res-content-wrapper
+        margin-left: $NAV_WIDTH
+        padding-left: 20px
   .res-header
     position: relative
     // style for preview
@@ -174,7 +182,6 @@ html.responsive-html, html.responsive-html body
     -webkit-overflow-scrolling: touch
     margin-left: $NAV_WIDTH
     padding: 20px 20px 0 20px
-    +basic_transition
     .res-side
       width: $SIDE_WIDTH
       float: right

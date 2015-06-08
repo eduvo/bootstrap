@@ -39,6 +39,7 @@ class ResponsiveLayout
         $target = $($el.data('target'))
         is_open = $el.hasClass('open')
         $target.toggle(is_open)
+        $(e.delegateTarget).toggleClass('navigation-open', is_open)
 
 if $('.res-layout').length
   new ResponsiveLayout($('.res-layout'))
