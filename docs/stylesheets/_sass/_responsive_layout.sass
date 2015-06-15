@@ -1,13 +1,12 @@
 @import shared/variables
 
 #responsive-nav
-  position: absolute
-  bottom: calc( 100% - 5px)
-  top: auto
+  position: fixed
+  top: -50px
   left: 0
   right: 0
   opacity: 0.8
-  transition: 0.3s
+  transition: 0.1s
   z-index: 10
   .bs-docs-nav .navbar-nav > li > a:hover,
   .bs-docs-nav .navbar-nav > .active > a,
@@ -26,17 +25,18 @@
 $HEAD_HEIGHT: 60px
 $NAV_WIDTH: 240px
 $SIDE_WIDTH: 250px
+$screen-md: 992px
+$screen-sm: 768px
 
 =basic_transition
   transition: 0.3s
 
-html.responsive-html, html.responsive-html body
-  height: 100%
-  overflow: hidden
-.res-layout
-  height: 100%
-  // style for preview
+html.responsive-html body
   background: $backgroundColor
+
+.res-layout
+  // style for preview
+  min-height: calc( 100% - #{$HEAD_HEIGHT} )
   &#settings-layout
     .res-content-wrapper
       margin-left: 0
@@ -46,17 +46,21 @@ html.responsive-html, html.responsive-html body
         margin-left: $NAV_WIDTH
         padding-left: 20px
   .res-header
-    position: relative
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 3
     // style for preview
     background: #fff
-    font-size: 40px
-    height: 60px
-    line-height: 60px
+    height: $HEAD_HEIGHT
+    line-height: $HEAD_HEIGHT
     color: #293040
     +regular-box-shadow
     i.fa
       color: #4b8ffa
     > *
+      line-height: 1em
       height: $HEAD_HEIGHT
     .header-menu
       padding: 0
@@ -136,27 +140,18 @@ html.responsive-html, html.responsive-html body
           font-size: 20px
         span
           white-space: nowrap
-    // &:before
-    //   content: ''
-    //   position: absolute
-    //   top: 100%
-    //   left: 0
-    //   right: 0
-    //   height: 3px
-    //   background: linear-gradient(rgba(#000, 0.1), rgba(#000, 0))
   .res-body
-    height: calc( 100% - #{$HEAD_HEIGHT} )
     &:after
       content: ''
       display: table
       clear: both
-  .res-navigation, .res-content
-    // overflow-y: auto
   .res-navigation
-    position: relative
-    height: 100%
+    position: fixed
     width: $NAV_WIDTH
-    float: left
+    top: $HEAD_HEIGHT
+    left: 0
+    bottom: 0
+    z-index: 5
     .account-switch
       position: absolute
       bottom: 0
@@ -169,18 +164,16 @@ html.responsive-html, html.responsive-html body
         padding-bottom: 50px
     .res-navigation-content
       height: 100%
+      overflow-y: auto
+      -webkit-overflow-scrolling: touch
       // style for preview
       color: #fff
       background: #293040
-      overflow-y: auto
-      -webkit-overflow-scrolling: touch
-    .glyphicon-menu-hamburger
+    .fa-bars, .glyphicon-menu-hamburger
       display: none
   .res-content-wrapper
-    height: 100%
-    overflow-y: auto
-    -webkit-overflow-scrolling: touch
     margin-left: $NAV_WIDTH
+    margin-top: $HEAD_HEIGHT
     padding: 20px 20px 0 20px
     .res-side
       width: $SIDE_WIDTH
@@ -211,7 +204,7 @@ html.responsive-html, html.responsive-html body
     z-index: 1
 
 /* Medium devices (mobile, 992px and up) */
-@media (max-width: 991px)
+@media (max-width: $screen-md)
   .res-layout
     .res-content-wrapper
       margin-left: 0
@@ -255,19 +248,23 @@ html.responsive-html, html.responsive-html body
     &#settings-layout
       .res-content
         margin-right: 0
+      .res-content-wrapper, &.navigation-open .res-content-wrapper
+        padding-left: 20px
+        margin-left: 0
     .res-navigation
       display: block!important
-      position: absolute
-      top: 0
+      position: fixed
+      top: $HEAD_HEIGHT
       left: -$NAV_WIDTH
       bottom: 0
       +basic_transition
-      .glyphicon-menu-hamburger
+      .fa-bars, .glyphicon-menu-hamburger
         cursor: pointer
         display: block
-        position: absolute
-        left: 100%
+        position: fixed
+        left: 0
         top: 0
+        z-index: 5
         font-size: 24px
         color: #293040
         height: 60px
@@ -288,8 +285,10 @@ html.responsive-html, html.responsive-html body
           z-index: 1
       // .res-content-wrapper
       .res-navigation
-        z-index: 2
+        z-index: 5
         left: 0
+        .fa-bars:before
+          content: "\f00d"
         .glyphicon-menu-hamburger:before
           content: "\e014"
     .res-header
@@ -299,7 +298,7 @@ html.responsive-html, html.responsive-html body
         padding-left: 20px
 
 /* Small devices (tablets, 768px and up) */
-@media (max-width: 767px)
+@media (max-width: $screen-sm)
   .res-layout
     .res-content-wrapper
       .res-side
